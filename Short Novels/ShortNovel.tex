@@ -1,0 +1,203 @@
+% Basic Short Story Collection Template
+% For both print and e-book publication
+% =======================================
+
+% Document Class
+\documentclass[11pt,oneside,openany]{memoir}
+
+% Required Packages - Minimal set
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% Define colors
+\definecolor{chaptercolor}{RGB}{70,30,30}
+\definecolor{linkcolor}{RGB}{0,70,120}
+
+% Disable microtype font expansion which causes errors on some systems
+\usepackage[protrusion=true,expansion=false]{microtype}
+
+% Page Layout - Standard dimensions for 6x9 book
+\setstocksize{9in}{6in}
+\settrimmedsize{9in}{6in}{*}
+\setlrmarginsandblock{0.85in}{0.85in}{*}
+\setulmarginsandblock{0.85in}{0.85in}{*}
+\checkandfixthelayout
+
+% Typography Settings
+\setlength{\parindent}{1.2em}
+\setlength{\parskip}{0pt}
+\setsecnumdepth{none}
+
+% Custom Chapter Formatting
+\chapterstyle{plain}
+\renewcommand{\chaptitlefont}{\normalfont\Large\bfseries\centering\color{chaptercolor}}
+\renewcommand{\printchaptername}{}
+\renewcommand{\printchapternum}{}
+\renewcommand{\afterchaptertitle}{\vskip 0.5em \hrule height 0.5pt \vskip 1.5em}
+
+% Section Formatting
+\setsecheadstyle{\normalfont\large\bfseries\centering\color{chaptercolor}}
+
+% Custom Headers and Footers
+\pagestyle{ruled}
+\makeoddfoot{ruled}{}{\thepage}{}
+\makeevenfoot{ruled}{}{\thepage}{}
+\makeoddhead{ruled}{}{}{\rightmark}
+
+% Hyperref Setup (for e-books)
+\hypersetup{
+    pdftitle={Collection of Short Novels},
+    pdfauthor={Your Name},
+    colorlinks=true,
+    linkcolor=linkcolor,
+    filecolor=linkcolor,
+    urlcolor=linkcolor,
+    citecolor=linkcolor
+}
+
+% Story Section Command
+\newcommand{\storyseparator}{
+    \begin{center}
+        \vspace{1.5cm}
+        {\color{chaptercolor}$\ast$\quad$\ast$\quad$\ast$}
+        \vspace{1.5cm}
+    \end{center}
+}
+
+\newcommand{\story}[3][]{
+    \clearpage
+    \chapter{#2}
+    
+    % Optional epigraph/quote
+    \ifx&#1&
+    \else
+        \begin{center}
+            \vspace{-1cm}
+            \textit{``#1''}
+            \vspace{0.5cm}
+        \end{center}
+    \fi
+    
+    % Story text without lettrine (drop cap) to avoid potential issues
+    #3
+}
+
+% Main Document
+% ===========
+\begin{document}
+
+% --- FRONT MATTER ---
+\frontmatter
+
+% Title Page
+\begin{titlingpage}
+    \begin{center}
+        \vspace*{0.25\textheight}
+        {\Large\bfseries\color{chaptercolor} COLLECTION OF\\SHORT NOVELS \par}
+        \vspace{1cm}
+        {\large\itshape Subtitle (if any) \par}
+        
+        \vspace{0.2\textheight}
+        {\itshape by \par}
+        \vspace{0.5cm}
+        {\large\bfseries YOUR NAME \par}
+    \end{center}
+\end{titlingpage}
+
+% Copyright Page
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+    \textit{First Edition}
+    
+    \vspace{1cm}
+    Copyright \textcopyright\ \the\year\ Your Name\\
+    All rights reserved.
+    
+    \vspace{1cm}
+    \small
+    This is a work of fiction. Names, characters, places, and incidents\\
+    either are the product of the author's imagination or are used fictitiously.\\
+    Any resemblance to actual persons, living or dead, events, or locales\\
+    is entirely coincidental.
+\end{center}
+\vspace*{\fill}
+
+% Dedication (optional)
+\clearpage
+\thispagestyle{empty}
+\vspace*{\fill}
+\begin{center}
+    \textit{For [dedication]}
+\end{center}
+\vspace*{\fill}
+
+% Table of Contents
+\clearpage
+\renewcommand{\contentsname}{CONTENTS}
+\tableofcontents*
+
+% Introduction or Preface (optional)
+\clearpage
+\chapter{INTRODUCTION}
+This is where you can write an introduction or preface to your collection. The introduction sets the tone for your collection of short novels and gives readers context about the themes, inspiration, or connections between the stories.
+
+% --- MAIN CONTENT ---
+\mainmatter
+
+% Short Novel 1
+\story[Every great story begins with a single word.]{THE FIRST JOURNEY}{
+    The morning sun cast long shadows across the valley as Maria stepped onto the porch. The wooden boards creaked beneath her feet, announcing her presence to the wilderness before her. She drew a deep breath of the crisp mountain air, filling her lungs with its pine-scented coolness.
+    
+    It had been five years since she'd last stood in this spot. Five years since the argument that had sent her fleeing to the city, promising never to return. Yet here she was, drawn back by a cryptic letter and the fading memory of a promise made long ago.
+    
+    \section{The Return}
+    
+    "I didn't think you'd come," a voice said from behind her.
+    
+    Maria turned to find her brother leaning against the doorframe. Thomas looked older now, the years etched into the corners of his eyes and the silver threading through his once dark hair.
+    
+    "I almost didn't," she admitted. "But some promises can't be broken."
+    
+    He nodded, understanding passing between them without words. The feud that had divided them seemed smaller now, diminished by time and the greater concerns that had brought them together once more.
+}
+
+% Short Novel 2
+\story{THE FORGOTTEN ROOM}{
+    The key felt unusually heavy in Samuel's palm as he stood before the door. It was an ornate thing—brass with an intricate pattern that curled around its bow and down the shaft. The real estate agent had handed it to him with a strange expression, somewhere between apology and relief.
+    
+    "This opens the room on the third floor," she'd said. "The previous owner insisted it remain locked. Some old family superstition, I suppose."
+    
+    Samuel hadn't thought much of it at the time. Old houses came with oddities; it was part of their charm. But now, as he climbed the narrow stairs to the mysterious third-floor room, the weight of the key seemed to increase with each step.
+    
+    The lock turned with surprising ease. The door swung open silently, as if recently oiled. Samuel stood on the threshold, peering into darkness that seemed deeper than merely the absence of light.
+}
+
+% Story separator
+\storyseparator
+
+% Short Novel 3
+\story[Sometimes the smallest discoveries change everything.]{THE CLOCKMAKER'S DAUGHTER}{
+    The workshop was exactly as her father had left it. Tools arranged with precision on pegboards, half-finished clocks on the workbench, the persistent tick-tock of dozens of timepieces creating a symphony of seconds passing. Eleanor ran her fingers over the smooth wooden surface of the bench, collecting a fine layer of dust.
+    
+    Three months since his passing, and this was the first time she'd gathered the courage to enter the space that had been his sanctuary. The solicitor had been clear—everything needed to be cataloged for the estate. Including, he'd emphasized with unusual insistence, the contents of the small green safe behind the portrait of her mother.
+    
+    Eleanor knew of no safe. In all her thirty-two years, her father had never mentioned it. She crossed to the familiar portrait and carefully removed it from the wall, revealing exactly what the solicitor had described: a palm-sized safe with a dial lock, painted the same green as the workshop walls.
+}
+
+% --- BACK MATTER ---
+\backmatter
+
+% About the Author
+\chapter{ABOUT THE AUTHOR}
+Your author bio goes here. This section should include a brief biography highlighting your background, previous works, and perhaps some personal details that readers might find interesting.
+
+% Acknowledgments
+\chapter{ACKNOWLEDGMENTS}
+In this section, thank the people who helped you create this book. This might include family members, friends, editors, beta readers, or anyone else who contributed to bringing your stories to life.
+
+\end{document}
