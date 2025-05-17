@@ -1,0 +1,32 @@
+# LaTeX auxiliary files
+*.aux
+*.log
+*.out
+*.toc
+
+# Other LaTeX temporary files that should typically be ignored
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.run.xml
+*.dvi
+*.xdv
+*.lof
+*.lot
+*.idx
+*.ilg
+*.ind
+*.ist
+
+# LaTeX build directories
+_build/
+build/
+
+# Editor backup files
+*~
+*.bak
+*.swp
