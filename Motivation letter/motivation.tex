@@ -1,0 +1,64 @@
+% ------------------------------------------------------------------
+%  Motivation Letter – LaTeX Template
+% ------------------------------------------------------------------
+\documentclass[12pt,a4paper,roman]{moderncv}      % moderncv – minimalistic CV 
+
+% ---------- Packages ------------------------------------------------
+\usepackage[english]{babel}        % language
+\usepackage[utf8]{inputenc}       % encoding
+\usepackage[scale=0.873]{geometry} % page margins
+
+% ---------- ModernCV styling --------------------------------------
+\moderncvstyle{classic}
+\moderncvcolor{black}
+
+% ---------- Personal data (use placeholders) -----------------------
+\name{<First Name>}{<Last Name>}
+\email{<email@example.com>}
+\phone[mobile]{<Phone Number>}
+\address{<City>}{<Country>}{}
+
+% ---------- Document begin ----------------------------------------
+\begin{document}
+
+% ---------- Letter header -----------------------------------------
+\recipient{<Recipient Name or Title>}{<Recipient Address>}
+\date{\today}
+\opening{Subject: Job opportunities in <Job Description>}
+\closing{Yours sincerely,}
+
+% ---------- Letter body -------------------------------------------
+\makelettertitle
+
+% Example greeting
+Respected <Recipient Title>,
+
+% Add a brief introduction – replace with your own text
+\vspace{0.5em}
+I am writing to express my interest in the position of <Position Title> at <Company 
+Name>. I hold a Master’s degree in <Field of Study> from <University>, and I am 
+eager to apply my skills in <relevant skills> to your team.
+
+% Add your professional experience – replace with your own text
+\vspace{0.5em}
+During my studies and work experience I have gained proficiency in <Programming 
+Languages>, <Technologies>, and <Methodologies>. I have also contributed to 
+open‑source projects such as <Project Name> and have a strong background in 
+<Related Field>.
+
+% Add any additional achievements or interests
+\vspace{0.5em}
+My interests include <Academic Interest> and <Personal Hobby>. I am particularly 
+excited about the opportunity to contribute to <Company’s Projects/Goals>.
+
+% Concluding remarks
+\vspace{0.5em}
+I look forward to the possibility of discussing how my background, skills, and 
+enthusiasms align with the needs of your team. Thank you for considering my 
+application.
+
+% ---------- Letter closing -----------------------------------------
+\makeletterclosing
+
+% ---------- End of document ----------------------------------------
+\end{document}
